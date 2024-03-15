@@ -1,0 +1,21 @@
+<div id="protien" class="protien_main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="titlepage">
+          <h2>Our Protien</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let protien of protiens" class="col-md-3 col-sm-6">
+        <div class="protien">
+          <figure><img [src]="protien.image" alt="#" /></figure>
+          <h3>{{ protien.price | currency }}</h3>
+          <span> Variations </span>
+          <a class="read_more mar_top" href=""> Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
