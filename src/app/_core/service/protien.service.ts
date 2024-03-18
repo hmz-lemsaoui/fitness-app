@@ -22,6 +22,7 @@ export class ProtienService {
   }
 
   create(tutorial: Protien): any {
+    tutorial.image = 'assets/images/pro3.png';
     return this.proteinsRef.add({ ...tutorial });
   }
 

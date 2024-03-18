@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit, inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Component, OnInit, inject } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { ProductsComponent } from '../products.component';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProtienService } from '../../_core/service/protien.service';

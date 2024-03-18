@@ -69,4 +69,8 @@ export class ProductsComponent implements AfterViewInit {
         this.dataSource.paginator = this.paginator;
       });
   }
+
+  deleteItem(id: any) {
+    this.protienService.delete(id).then(() => {});
+  }
 }
