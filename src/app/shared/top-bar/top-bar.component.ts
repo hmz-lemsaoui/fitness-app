@@ -9,10 +9,22 @@ import { Router } from '@angular/router';
 })
 export class TopBarComponent {
   private readonly authService = inject(AuthService);
-  private readonly rouetr = inject(Router);
+  private readonly router = inject(Router);
 
   logout() {
     this.authService.SignOut();
+  }
+
+  goToProducst() {
+    this.router.navigate(['/products']);
+  }
+
+  goToRegister() {
+    this.router.navigate(['/register']);
+  }
+
+  goToLogin() {
+    this.router.navigate(['/login']);
   }
 
   get isLoggedIn() {
@@ -20,6 +32,6 @@ export class TopBarComponent {
   }
 
   goToRoot() {
-    this.rouetr.navigate(['/']);
+    this.router.navigate(['/']);
   }
 }

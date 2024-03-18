@@ -10,27 +10,41 @@
     </button>
     <span class="example-spacer"></span>
     <button
+      *ngIf="isLoggedIn"
+      (click)="goToProducst()"
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>list</mat-icon> Products
+    </button>
+    <span class="example-spacer"></span>
+    <button
+      *ngIf="isLoggedIn"
       (click)="logout()"
       mat-icon-button
       class="example-icon favorite-icon"
       aria-label="Example icon-button with heart icon"
     >
-      <mat-icon>logout</mat-icon>
+      <mat-icon>logout</mat-icon> Logout
     </button>
     <ng-container *ngIf="!isLoggedIn">
       <button
+        (click)="goToLogin()"
         mat-icon-button
-        class="example-icon"
+        class="example-icon p-4"
         aria-label="Example icon-button with share icon"
       >
-        login
+        Login
       </button>
+
       <button
+        (click)="goToRegister()"
         mat-icon-button
         class="example-icon"
         aria-label="Example icon-button with share icon"
       >
-        register
+        Register
       </button>
     </ng-container>
   </mat-toolbar>
