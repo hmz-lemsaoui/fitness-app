@@ -19,6 +19,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { AddProductComponent } from './products/add-product/add-product.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 const materialComponents = [
   MatProgressSpinnerModule,
@@ -26,6 +32,10 @@ const materialComponents = [
   MatPaginatorModule,
   MatButtonModule,
   MatIconModule,
+  MatCardModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule,
 ];
 @NgModule({
   declarations: [
@@ -38,6 +48,7 @@ const materialComponents = [
     GrowyhingComponent,
     TestimonialComponent,
     ProductsComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +56,7 @@ const materialComponents = [
     SharedModule,
     ...materialComponents,
     AuthModule,
+    ReactiveFormsModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

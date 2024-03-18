@@ -4,6 +4,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Protien } from '../_core/data/protien';
 import { ProtienService } from '../_core/service/protien.service';
 import { tap, map } from 'rxjs';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { AddProductComponent } from './add-product/add-product.component';
 
 @Component({
   selector: 'mg-products',
@@ -20,12 +22,29 @@ export class ProductsComponent implements AfterViewInit {
   ];
   dataSource!: MatTableDataSource<Protien>;
 
+  addProductClick: boolean = false;
+
   private readonly protienService = inject(ProtienService);
+  private readonly dialog = inject(MatDialog);
+
+  animal!: string;
+  name!: string;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngAfterViewInit() {
     this.retrieveProteins();
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddProductComponent, {
+      data: { name: this.name, animal: this.animal },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
   }
 
   retrieveProteins(): void {

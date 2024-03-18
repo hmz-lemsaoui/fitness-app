@@ -1,6 +1,7 @@
 <div class="mat-elevation-z8 m-5">
   <h2>List of products</h2>
   <button
+    (click)="openDialog()"
     class="m-2"
     mat-mini-fab
     aria-label="Example icon button with a home icon"
@@ -62,3 +63,5 @@
   >
   </mat-paginator>
 </div>
+
+<!-- <mg-add-product *ngIf="addProductClick"></mg-add-product> -->
