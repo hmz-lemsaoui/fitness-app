@@ -14,8 +14,19 @@ import { AboutComponent } from './about/about.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { GrowyhingComponent } from './growyhing/growyhing.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
+import { ProductsComponent } from './products/products.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
-const materialComponents = [MatProgressSpinnerModule];
+const materialComponents = [
+  MatProgressSpinnerModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatButtonModule,
+  MatIconModule,
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +37,7 @@ const materialComponents = [MatProgressSpinnerModule];
     ContactUsComponent,
     GrowyhingComponent,
     TestimonialComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
