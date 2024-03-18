@@ -30,6 +30,8 @@ export class AddProductComponent implements OnInit {
     if (this.ProteinForm.invalid) return;
 
     // send the login form
-    this.proteinService.create(this.ProteinForm.value).then(() => {});
+    this.proteinService.create(this.ProteinForm.value).then(() => {
+      this.dialogRef.close();
+    });
   }
 }
